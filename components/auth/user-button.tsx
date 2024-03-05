@@ -11,6 +11,7 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { FaUser } from 'react-icons/fa';
 import { useCurrentUser } from '@/hooks/use-current-user';
 import { ExitIcon } from '@radix-ui/react-icons';
+import { logout } from '@/actions/logout';
 
 const UserButton = () => {
   const user = useCurrentUser();
@@ -25,7 +26,7 @@ const UserButton = () => {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="end">
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => logout()}>
           <ExitIcon className="mr-2 h-4 w-4" />
           Sign out
         </DropdownMenuItem>
